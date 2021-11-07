@@ -10,8 +10,14 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:magento-trigger/composer.git"
+        }
+    ],
     "require": {
-        "php": "~7.4.0||~8.0.0",
+        "php": "~7.4.0||~8.0.0||~8.1.0",
         "ext-bcmath": "*",
         "ext-ctype": "*",
         "ext-curl": "*",
@@ -37,7 +43,7 @@
         "elasticsearch/elasticsearch": "~7.14.0",
         "guzzlehttp/guzzle": "^7.3.0",
         "laminas/laminas-captcha": "^2.11",
-        "laminas/laminas-code": "~4.4.3",
+        "laminas/laminas-code": "4.5.x-dev",
         "laminas/laminas-db": "^2.13.4",
         "laminas/laminas-dependency-plugin": "^2.2.0",
         "laminas/laminas-di": "^3.3.0",
@@ -61,7 +67,7 @@
         "laminas/laminas-view": "~2.14.1",
         "league/flysystem": "^2.0",
         "league/flysystem-aws-s3-v3": "^2.0",
-        "magento/composer": "1.8.x-dev as 1.8.0",
+        "magento/composer": "dev-php81 as 1.8.0",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
         "magento/magento-composer-installer": ">=0.1.11",
         "magento/zendframework1": "1.14.6-beta1 as 1.14.6",
@@ -86,7 +92,7 @@
         "friendsofphp/php-cs-fixer": "~3.0.0",
         "lusitanian/oauth": "~0.8.10",
         "magento/magento-coding-standard": "*",
-        "magento/magento2-functional-testing-framework": "^3.7",
+        "magento/magento2-functional-testing-framework": "dev-develop",
         "pdepend/pdepend": "~2.10.0",
         "phpcompatibility/php-compatibility": "^9.3",
         "phpmd/phpmd": "^2.9.1",
@@ -382,5 +388,6 @@
             "Magento\\PhpStan\\": "dev/tests/static/framework/Magento/PhpStan/"
         }
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
