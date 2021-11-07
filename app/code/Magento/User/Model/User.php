@@ -554,6 +554,14 @@ class User extends AbstractModel implements StorageInterface, UserInterface
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getId()
+    {
+        return (string) parent::getId() ?: null;
+    }
+
+    /**
      * Retrieve user name
      *
      * @param string $separator
