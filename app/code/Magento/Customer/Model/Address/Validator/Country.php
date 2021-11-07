@@ -101,8 +101,10 @@ class Country implements ValidatorInterface
         $countryModel = $address->getCountryModel();
         $regionCollection = $countryModel->getRegionCollection();
         $region = $address->getRegion();
-        $regionId = (string)$address->getRegionId();
-        $allowedRegions = $regionCollection->getAllIds();
+        $regionId = $address->getRegionId();
+        $allowedRegions = array_map(function($id) {
+            return (int) $id;
+        }, $regionCollection->getAllIds());
         $isRegionRequired = $this->directoryData->isRegionRequired($countryId);
         if ($isRegionRequired && empty($allowedRegions) && !\Zend_Validate::is($region, 'NotEmpty')) {
             //If region is required for country and country doesn't provide regions list
