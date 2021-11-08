@@ -475,6 +475,14 @@ class Order extends AbstractModel implements EntityInterface, OrderInterface
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getId()
+    {
+        return (string) parent::getId() ?: null;
+    }
+
+    /**
      * Retrieve can flag for action (edit, unhold, etc..)
      *
      * @param string $action
